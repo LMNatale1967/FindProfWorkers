@@ -35,7 +35,7 @@ export class FormControlComponent {
   // public userName = new FormControl('');
   // public userEMail = new FormControl('');
 
-  public name = new FormControl('LMNatale');
+  public name = new FormControl('Luly');
   public userName = new FormControl('Luis Miguel Natale');
   public userEMail = new FormControl('LuisMiguelNatale@gmail.com');
 
@@ -46,6 +46,11 @@ export class FormControlComponent {
     console.log(this.userName);
     console.log(this.userEMail);
   }
+
+  updateName() {
+    this.name.setValue("LMNatale")
+  }
+
 
 }
 
