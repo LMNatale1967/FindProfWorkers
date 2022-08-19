@@ -23,11 +23,17 @@ export class ProfileEditorComponent {
 
 
  updateProfile() {
-  this.profileForm.patchValue({
-    firstName: 'Nancy',
-    address: {
-      street: '123 Drew Street'
-    }
-  });
+   // Nothing To do
+  console.log("Nothing To do For the Moment");
+
+    this.profileForm.patchValue({
+
+      // address: {
+      //   street: 'Place des Agustins N° 17',
+      //   city: "Genève",
+      //   state: "GE",
+      //   zip: "1205"
+      // }
+    });
  }
 }
