@@ -1,0 +1,17 @@
+.ng-invalid {
+    border-color: red;
+    border-width: 2px;
+}
+
+.ng-touched {
+    border-color: red;
+}
+
+.ng-pristine {
+    border-color: red;
+}
+
+.disabled {
+    border-color: black;
+    color: gray;
+}

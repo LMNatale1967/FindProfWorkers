@@ -1,0 +1,7 @@
+<h1 style="margin-left: 25px;">Main Works !</h1>
+
+<ul style="margin-left: 25px;">
+    <li *ngFor = "let product of productItems" (click)="displayDescription(product.description, product.value, $event)">
+          {{product.name |uppercase}}
+    </li>
+</ul>

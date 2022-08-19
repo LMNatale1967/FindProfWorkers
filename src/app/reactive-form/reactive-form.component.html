@@ -1,0 +1,43 @@
+<h1 style="margin-left: 25px;">Reactive-Form Woks !</h1>
+<h1 style="margin-left: 25px;">Two Way Data Binding</h1>
+
+
+<form [FormGroup]="signinForm" (ngSubmit)="register()">
+
+    <label style="margin-left: 45px;" for="userName">User Name : </label>
+    <input 
+        title="userName" 
+        type="text"     
+        required    
+        id="userName"
+        name="userName"
+        formControlName="userName" />       
+
+        <div style="margin-left: 45px; color: red;">
+            {{userName}}
+        </div>
+    <br>
+
+    <label style="margin-left: 80px;" for="userEMail">User E-Mail : </label>
+    <input 
+        title="userEMail" 
+        type="text" 
+        required
+        id="userEMail" 
+        name="userEMail"
+        size="30"
+        formControlName="userEMail" />       
+
+        <div style="margin-left: 45px; color: red;">
+            {{userEMail}}
+        </div>
+    <br>
+
+    <button 
+        style="margin-left: 350px; 
+               color:blue; 
+               border-color: black; 
+               border-style:solid; 
+               border-width: 2px;"
+        type="submit">Sign Up</button>
+</form> 

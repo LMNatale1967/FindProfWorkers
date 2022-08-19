@@ -1,0 +1,219 @@
+<h1 style="margin-left: 25px;">Template-Drive Form Works !</h1>
+<h1 style="margin-left: 25px;">Two Way Data Binding</h1>
+
+<form (ngSubmit)="register()">
+
+    <label class="disabled" style="margin-left: 45px;" for="profileID">Profile ID : </label>
+    <input 
+        class="disabled"
+        title="ProfileID" 
+        type="text"     
+        readonly
+        id="profileID"
+        name="profileID"
+        size="36"        
+        value="0e9d9ab9-085a-42fe-93cc-cd45e7c205a4"
+        [(ngModel)]="profileID" />       
+
+        <div style="margin-left: 45px; color: red;">
+            {{profileID}}
+        </div>
+    <br>
+
+    <label style="margin-left: 45px;" for=" profileFirstName">Profile First Name : </label>
+    <input 
+        title="profileFirstName" 
+        type="text"     
+        required    
+        id="profileFirstName"
+        name="profileFirstName"
+        size="35"
+        [(ngModel)]="profileFirstName" />       
+
+        <div style="margin-left: 45px; color: red;">
+            {{profileFirstName}}
+        </div>
+    <br>
+
+
+    <label style="margin-left: 45px;" for="profileMiddleInitial">Profile Middle Initial : </label>
+    <input 
+        title="profileMiddleInitial" 
+        type="text"     
+        id="profileMiddleInitial"
+        name="profileiddMeInitial"
+        size="5"
+        [(ngModel)]="profileMiddleInitial" />       
+
+        <div style="margin-left: 45px; color: red;">
+            {{profileMiddleInitial}}
+        </div>
+    <br>
+
+
+    <label style="margin-left: 45px;" for="profileLastName">Profile Last Name : </label>
+    <input 
+        title="profileLastName" 
+        type="text"     
+        required    
+        id="profileLastName"
+        name="profileLastName"
+        size="35"
+        [(ngModel)]="profileLastName" />       
+
+        <div style="margin-left: 45px; color: red;">
+            {{profileLastName}}
+        </div>
+    <br>
+
+
+    <label style="margin-left: 45px;" for="profileMainEMail">Profile Main E-Mail : </label>
+    <input 
+        title="profileMainEMail" 
+        type="text"     
+        required    
+        id="profileMainEMail"
+        name="profileMainEMail"
+        size="45"
+        [(ngModel)]="profileMainEMail" />       
+
+        <div style="margin-left: 45px; color: red;">
+            {{profileMainEMail}}
+        </div>
+    <br>
+
+
+    <label style="margin-left: 45px;" for="profileAlternateEMail">Profile Alternate E-Mail : </label>
+    <input 
+        title="profileAlternateEMail" 
+        type="text"     
+        id="profileAlternateEMail"
+        name="profileAlternateEMail"
+        size="45"
+        [(ngModel)]="profileAlternateEMail" />       
+
+        <div style="margin-left: 45px; color: red;">
+            {{profileAlternateEMail}}
+        </div>
+    <br>
+
+
+    <label style="margin-left: 45px;" for="profileMainPhoneNumber">Profile Main Phone Number : </label>
+    <input 
+        title="profileMainPhoneNumber" 
+        type="text"     
+        id="profileMainPhoneNumber"
+        name="profileMainPhoneNumber"
+        size="35"
+        [(ngModel)]="profileMainPhoneNumber" />       
+
+        <div style="margin-left: 45px; color: red;">
+            {{profileMainPhoneNumber}}
+        </div>
+    <br>
+
+    
+    <label style="margin-left: 45px;" for="profileMobilePhoneNumber">Profile Main Phone Number : </label>
+    <input 
+        title="profileMobilePhoneNumber" 
+        type="text"     
+        required    
+        id="profileMobilePhoneNumber"
+        name="profileMobilePhoneNumber"
+        size="35"
+        [(ngModel)]="profileMobilePhoneNumber" />       
+
+        <div style="margin-left: 45px; color: red;">
+            {{profileMobilePhoneNumber}}
+        </div>
+    <br>
+
+    
+    <label style="margin-left: 45px;" for="profileCurrentStatus">Profile Current Status : </label>
+    <input 
+        title="profileCurrentStatus" 
+        type="text"     
+        required    
+        id="profileCurrentStatus"
+        name="profileCurrentStatus"
+        size="10"
+        [(ngModel)]="profileCurrentStatus" />       
+
+        <div style="margin-left: 45px; color: red;">
+            {{profileCurrentStatus}}
+        </div>
+    <br>
+
+    
+    <label style="margin-left: 45px;" for="profilePicture">Profile Picture : </label>
+    <input 
+        title="profilePicture" 
+        type="text"     
+        required    
+        id="profilePicture"
+        name="profilePicture"
+        size="45"
+        [(ngModel)]="profilePicture" />       
+
+        <div style="margin-left: 45px; color: red;">
+            {{profilePicture}}
+        </div>
+    <br>
+
+
+    <label style="margin-left: 45px;" for="profileRemarks">Profile Short Remarks : </label>
+    <input 
+        title="profileShortRemarks" 
+        type="text"     
+        id="profileShortRemarks"
+        name="profileShortRemarks"
+        size="60"
+        [(ngModel)]="profileShortRemarks" />       
+
+        <div style="margin-left: 45px; color: red;">
+            {{profileShortRemarks}}
+        </div>
+    <br>
+
+
+
+
+
+    <label style="margin-left: 45px;" for="userName">User Name : </label>
+    <input 
+        title="userName" 
+        type="text"     
+        required    
+        id="userName"
+        name="userName"
+        [(ngModel)]="userName" />       
+
+        <div style="margin-left: 45px; color: red;">
+            {{userName}}
+        </div>
+    <br>
+
+    <label style="margin-left: 80px;" for="eMail">E-Mail : </label>
+    <input 
+        title="eMail" 
+        type="text" 
+        required
+        id="userrName" 
+        name="eMail"
+        size="30"
+        [(ngModel)]="eMail" />       
+
+        <div style="margin-left: 45px; color: red;">
+            {{eMail}}
+        </div>
+    <br>
+
+    <button 
+        style="margin-left: 350px; 
+               color:blue; 
+               border-color: black; 
+               border-style:solid; 
+               border-width: 2px;" 
+        type="submit">Sign Up</button>
+</form>
+
