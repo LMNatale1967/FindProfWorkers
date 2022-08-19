@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -27,7 +27,7 @@ import { FormComponent } from './form/form.component';
     MainComponent,
     ColorPipe,                    //  Added By Angualar
     IsAvailablePipe,              //  Added By Angualar
-    FormComponent                 //  Added By Angualar    
+    FormComponent                 //  Added By Angualar        
   ],
   imports: [
     BrowserModule,
@@ -35,7 +35,7 @@ import { FormComponent } from './form/form.component';
     FormsModule,           // Template-Driven Forms
     ReactiveFormsModule    // Reactive Forms
   ],
-
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
