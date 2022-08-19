@@ -5,3 +5,14 @@
     // field value is Invalid
     .ng-invalid {}
 }
+
+label {
+    font-weight: bold;
+    padding-bottom: .5rem;
+    padding-top: 1rem;
+    display: inline-block;
+  }
+  
+button {
+    max-width: 300px;
+}

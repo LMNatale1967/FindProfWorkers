@@ -2,7 +2,8 @@
 <h1 style="margin-left: 25px;">Two Way Data Binding</h1>
 
 
-<form [FormGroup]="signinForm" (ngSubmit)="register()">
+<!-- 
+    <form [formGroup]="signinForm" (ngSubmit)="register()">
 
     <label style="margin-left: 45px;" for="userName">User Name : </label>
     <input 
@@ -33,11 +34,18 @@
         </div>
     <br>
 
+    <p>Form userName: {{signinForm.userName | json}}</p>
+    <p>Form userEMail: {{signinForm.userEMail}</p>
+    
+    <p>Buton IsDisabled Until The Form Is NOT Complete</p>
+    <p>Complete the Form to Enable The Button.</p>
+
     <button 
         style="margin-left: 350px; 
                color:blue; 
                border-color: black; 
                border-style:solid; 
                border-width: 2px;"
-        type="submit">Sign Up</button>
-</form> 
+        type="submit" [disabled]="!signinForm.valid">Sign Up</button>
+    </form>   
+-->

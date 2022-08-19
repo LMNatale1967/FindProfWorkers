@@ -18,6 +18,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
+import { FormControlComponent } from './form-control/form-control.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormComponent } from './form/form.component';
     MainComponent,
     ColorPipe,                    //  Added By Angualar
     IsAvailablePipe,              //  Added By Angualar
-    FormComponent                 //  Added By Angualar        
+    FormComponent, 
+    FormControlComponent          //  Added By Angualar        
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,7 @@ import { FormComponent } from './form/form.component';
     FormsModule,           // Template-Driven Forms
     ReactiveFormsModule    // Reactive Forms
   ],
+
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]

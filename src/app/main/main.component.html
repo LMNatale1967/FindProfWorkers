@@ -2,6 +2,6 @@
 
 <ul style="margin-left: 25px;">
     <li *ngFor = "let product of productItems" (click)="displayDescription(product.description, product.value, $event)">
-          {{product.name |uppercase}}
+          {{product.name | uppercase}}
     </li>
 </ul>
