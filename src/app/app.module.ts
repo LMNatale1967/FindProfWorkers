@@ -20,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
 import { FormControlComponent } from './form-control/form-control.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+import { NameEditorComponent } from './name-editor/name-editor.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { ProfileEditorComponent } from './profile-editor/profile-editor.componen
     ColorPipe,                    //  Added By Angualar
     IsAvailablePipe,              //  Added By Angualar
     FormComponent, 
-    FormControlComponent, ProfileEditorComponent          //  Added By Angualar        
+    FormControlComponent, 
+    ProfileEditorComponent, 
+    NameEditorComponent          //  Added By Angualar        
   ],
   imports: [
     BrowserModule,

@@ -21,7 +21,7 @@ import { FormControl } from '@angular/forms';
 import { FormGroup} from '@angular/forms';
 
 @Component({
-  selector: 'app-name-editor',
+  selector: 'app-form-control-editor',
   templateUrl: './form-control.component.html',
   styleUrls: ['./form-control.component.scss']
 })
@@ -45,12 +45,13 @@ export class FormControlComponent {
     console.log(this.name);
     console.log(this.userName);
     console.log(this.userEMail);
+    console.log(this.signinForm.value);
   }
 
   updateName() {
     this.name.setValue("LMNatale")
   }
-
-
 }
+
+
 

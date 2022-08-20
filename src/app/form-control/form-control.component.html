@@ -22,8 +22,8 @@
     <p style="margin-left: 25px; font-weight: bold;">Form userEMail: {{userEMail.value}</p> 
 
 
-    <p style="margin-left: 35px; font-weight: bold; color:red">Buton Is Disabled Until The Form Is NOT Complete</p>
-    <p style="margin-left: 35px; font-weight: bold; color:red">Complete the Form to Enable The Button.</p>
+    <p style="margin-left: 150px; font-weight: bold; color:red">Buton Is Disabled Until The Form Is NOT Complete</p>
+    <p style="margin-left: 150px; font-weight: bold; color:red">Complete the Form to Enable The Button.</p>
 
     <div>
         <button 
@@ -32,7 +32,7 @@
             border-color: black; 
             border-style:solid; 
             border-width: 3px;"
-        type="submit" [disabled]="!signinForm.valid">Sign Up</button>
+        type="submit" [disabled]="!signinForm.valid" (click)="register()">Sign Up</button>
 
     <button 
         style="margin-left: 350px; 
@@ -43,3 +43,11 @@
         type="button" (click)="updateName()">Update Name</button>
     </div>
  </form>   
+
+ <!-- 
+  NOT Working 
+  The Form Status :
+  {{signinForm.valid |json}}  
+-->
+
+

@@ -1,0 +1,31 @@
+<h1 style="margin-left: 25px;">Name-Editor Works - Reactive-Form Woks !</h1>
+<h1 style="margin-left: 25px;">Two Way Data Binding</h1>
+
+    <form [formGroup]="form">
+
+        <label style="margin-left: 50px; font-weight: bold;" for="name">User Name : </label>
+        <input id="name" type="text" [formControl]="userName" formControlName="userName">
+
+        <br>
+        <br>
+
+        <label style="margin-left: 50px; font-weight: bold;" for="name">User E-Mail : </label>
+        <input id="name" type="text" size="45" [formControl]="userEMail" formControlName="userEMail">        
+
+        <p style="margin-left: 400px; font-weight: bold; font-size: 15px;">
+         <button type="button" (click)="updateForm()">Update</button>
+        </p>
+    </form>
+
+    <br>
+    <div style="margin-left: 50px; font-weight: bold;">
+        This Form is Valid ? : {{form.valid |json |uppercase}}
+    </div>
+
+    <br>
+    <ul style="margin-left: 50px; font-weight: bold;">
+        <li (click)="addGroup('Pomme')">Pomme</li>
+        <li (click)="addGroup('Kiwi')">Kiwi</li>
+        <li (click)="addGroup('Banane')">Banane</li>
+    </ul>
+
