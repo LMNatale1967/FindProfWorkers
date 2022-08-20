@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import myDatabase from 'src/assets/data/resto-data.json';
 import myData from 'src/assets/data/resto-data.json';
 
 
@@ -11,11 +12,17 @@ import myData from 'src/assets/data/resto-data.json';
 
 export class MainComponent implements OnInit {
 
-  // *****************************
-  //  Allow to HTML to use myData
-  // *****************************
+  // *******************************************************
+  //  Allow @ HTML to use myDatabase
+  //  Allow @ HTML to use data
+  //  We Inform HTMl we Have Exported some Var Ready to Use 
+  // *******************************************************
+  myDatabase = myDatabase;
   data = myData;
 
+  // ***********************
+  // INIT Array of Objects
+  // ***********************
   productItems = [
     {name: 'Pizza Margherita', description: 'A hugely popular margherita, with a deliciously tangy single cheese topping.', value:1},
     {name: 'Pizza Double Cheese Margherita', description: 'The ever-popular Margherita - loaded with extra cheese', value:2},

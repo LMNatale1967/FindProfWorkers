@@ -7,15 +7,24 @@
 </ul>
 
 <h1 style="margin-left: 25px; font-weight: bold;">Resto Alternate Real Solution !</h1>
+<h1 style="margin-left: 25px; font-weight: bold;">Title : {{myDatabase.title}</h1>
+<h1 style="margin-left: 25px; font-weight: bold;">Title : {{myData.title}</h1>
 
 <ul style="margin-left: 25px;">
-    <li *ngFor = "let recipe of data.title">
-          {{recipe | uppercase}}
+    <li *ngFor = "let category of myDatabase.data">
+          {{category.title | uppercase}}
     </li>
 </ul>  
 
 <!-- 
-<br>
+    <br>
     <pre>
-    {{data |json}}    
-    </pre> -->
+        {{myDatabase |json}}    
+    </pre> 
+-->
+
+<div style="margin-left: 75px; font-weight: bold;">
+    Title : {{myDatabase.title})
+    <br>
+    Title : {{data.title})
+</div>
