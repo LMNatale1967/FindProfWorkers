@@ -1,5 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
+import myData from 'src/assets/data/resto-data.json';
+
 
 @Component({
   selector: 'app-main',
@@ -8,6 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class MainComponent implements OnInit {
+
+  // *****************************
+  //  Allow to HTML to use myData
+  // *****************************
+  data = myData;
 
   productItems = [
     {name: 'Pizza Margherita', description: 'A hugely popular margherita, with a deliciously tangy single cheese topping.', value:1},

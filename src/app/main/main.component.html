@@ -1,7 +1,21 @@
-<h1 style="margin-left: 25px;">Main Works !</h1>
+<h1 style="margin-left: 25px; font-weight: bold;">Main Works !</h1>
 
 <ul style="margin-left: 25px;">
     <li *ngFor = "let product of productItems" (click)="displayDescription(product.description, product.value, $event)">
           {{product.name | uppercase}}
     </li>
 </ul>
+
+<h1 style="margin-left: 25px; font-weight: bold;">Resto Alternate Real Solution !</h1>
+
+<ul style="margin-left: 25px;">
+    <li *ngFor = "let recipe of data.title">
+          {{recipe | uppercase}}
+    </li>
+</ul>  
+
+<!-- 
+<br>
+    <pre>
+    {{data |json}}    
+    </pre> -->
