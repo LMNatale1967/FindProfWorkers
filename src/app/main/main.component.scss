@@ -1,0 +1,10 @@
+:host {
+    .ng-valid {};
+    .ng-invalid {};
+    .ng-untouched {};
+    .ng-touched {};
+    .ng-pristine {};
+    .ng_dirty {};
+    input.ng-untouched.ng-pristine {};
+    input.ng-touched.ng-invalid {};
+}

@@ -1,7 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
-import myDatabase from 'src/assets/data/resto-data.json';
-import myData from 'src/assets/data/resto-data.json';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { DisplayWelcomeService } from '../services/display-welcome/display-welcome.service';
+import { RecettesService } from '../services/recettes/reccetes.service';
 
 
 @Component({
@@ -17,11 +18,14 @@ export class MainComponent implements OnInit {
   //  Allow @ HTML to use data
   //  We Inform HTMl we Have Exported some Var Ready to Use 
   // *******************************************************
-  myDatabase = myDatabase;
-  data = myData;
+  myDatabase!: any; 
+  myDisplayWelcome = this._displayWelcome.displayWelcome();
+  
+  name!: string;
+  form!: FormGroup;
 
   // ***********************
-  // INIT Array of Objects
+  //  INIT Array of Objects
   // ***********************
   productItems = [
     {name: 'Pizza Margherita', description: 'A hugely popular margherita, with a deliciously tangy single cheese topping.', value:1},
@@ -39,9 +43,96 @@ export class MainComponent implements OnInit {
     console.log(pEvent);    
   }
 
-  constructor() { 
+  // *******************************************************
+  // Recomendation use private and _in The Name of the VAR
+  // *******************************************************
+  constructor(
+    private readonly _service: RecettesService,
+    private readonly _displayWelcome: DisplayWelcomeService,
+  ) {}
+
+  async ngOnInit() {
+
+    this.myDatabase = await this._service.getData();   
+
+    this.form = new FormGroup({
+      recettes: new FormArray([
+        new FormGroup({
+          name: new FormControl('', Validators.required),
+          quantity: new FormControl(1, Validators.compose ([
+            Validators.required,
+            Validators.min(1),
+          ])),
+        })
+      ]),
+    });
+
+    
+    // ******************
+    //  Log pour Checker
+    // ******************
+    console.log(this.form.status)
+    console.log(this.form.value.recettes.map((elem: any) => elem.quantity));
   }
 
-  ngOnInit(): void {
+  addRecette(name: string) {
+    const liste = this.form.get('recettes') as FormArray;
+    const index = liste.value.findIndex(
+      (el: any) => el.name === name
+    );
+
+    // ******************
+    //  Log pour Checker
+    // ******************
+    console.log(liste.value);
+
+    // Si la recette existe deja dans la liste...    
+    if (index >= 0) {
+      const recetteAIncremenet = liste.at(index);
+      const quantity = recetteAIncremenet.value.quantity;
+      recetteAIncremenet.patchValue({
+        quantity: quantity + 1
+      });
+
+    } else {
+      // Si la recette n'existe pas dans la list...
+      const group = new FormGroup({
+        name: new FormControl(name, Validators.required),
+        quantity: new FormControl(1, Validators.compose([
+          Validators.required,
+          Validators.min(1),
+        ])),
+      });
+
+      // *****************************************
+      //  Mettre le Nouveau Group Dans le Tableau
+      // *****************************************
+      liste.push(group);
+    }
+
+    // ******************
+    //  Log pour Checker
+    // ******************
+    console.log(this.form.value);
+    console.log(this.form.value.recettes.map((elem: any) => elem.quantity));
+  }
+
+  addGroup(name:string){
+    this.form.value.items.push();
+    (this.form.get('items') as FormArray).push(new FormGroup({
+      name: new FormControl(name),
+      quantity: new FormControl(1)
+    }));
+
+    // ******************
+    //  Log pour Checker
+    // ******************
+    console.log(this.form.value);    
+  }
+
+  // *****************************************
+  //  Call The Service Disply Welcome Message
+  // *****************************************
+  displayWelcome() {
   }
 }

@@ -1,0 +1,20 @@
+<h1 style="margin-left: 25px;">Profiles-List Works !</h1>
+
+<ul>
+    <li *ngFor = "let profile of profiles">
+         <p style="font-weight:bold;">UUID : {{profile.profileID}}</p>
+         <p style="font-weight:bold;"> Gender : 'To Implent' </p>
+         <p>First Name : {{profile.profileFirstName}}</p>
+         <p>Middle Initial : {{profile.profileMiddleInitial}}</p>
+         <p>profile LastName : {{profile.profileLastName}}</p>
+         <p>profile Main E-Mail : {{profile.profileMainEMail}}</p>
+         <p>profile Alternate E-Mail : {{profile.profileAlternateEMail}}</p>
+         <p>profile Main Phone Number : {{profile.profileMainPhoneNumber}}</p>
+         <p>profile Mobile Phone Number : {{profile.profileMobilePhoneNumber}}</p>
+         <p>profile Current Status : {{profile.profileCurrentStatus}}</p>
+         <p>profile Picture : {{profile.profilePicture}}</p>         
+         <p>Short Remarks : {{profile.profileShortRemarks}}</p>
+        <br>
+        <br>
+    </li>
+</ul>

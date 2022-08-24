@@ -1,0 +1,17 @@
+
+<h1 style="margin-left: 100px;">Login works !</h1>
+
+    <br>
+    
+    <form [formGroup]="signinForm" (ngSubmit)="login()">
+        <label style="margin-left: 25px; font-weight: bold;" for="name">Name or E-Mail address : </label>
+        <input style="margin-left: 25px; font-weight: bold;" id="name" type="text" size="45" [formControl]="userName">
+        
+        <br><br>
+        <label style="margin-left: 25px; font-weight: bold;" for="name">Password : </label>
+        <input style="margin-left: 25px; font-weight: bold;" id="name" type="Password" [formControl]="userPassword">
+
+        <p>
+         <button style="margin-left: 150px; font-weight: bold;" type="submit" class="btn btn primary">Subit</button>
+        </p>
+    </form>

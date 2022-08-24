@@ -1,30 +1,61 @@
-<h1 style="margin-left: 25px; font-weight: bold;">Main Works !</h1>
 
-<ul style="margin-left: 25px;">
-    <li *ngFor = "let product of productItems" (click)="displayDescription(product.description, product.value, $event)">
-          {{product.name | uppercase}}
-    </li>
-</ul>
+<!-- ********************************************** -->
+<!--  Check if we Have valid myDataBase myDatabase  -->
+<!-- ********************************************** -->
+<div *ngIf="myDatabase">
 
-<h1 style="margin-left: 25px; font-weight: bold;">Resto Alternate Real Solution !</h1>
-<h1 style="margin-left: 25px; font-weight: bold;">Title : {{myDatabase.title}</h1>
-<h1 style="margin-left: 25px; font-weight: bold;">Title : {{myData.title}</h1>
+  <h1 style="margin-left: 25px; font-weight: bold;">Resto Alternate Real Solution !</h1>
+  <h1 style="margin-left: 25px; font-weight: bold;">{{myDatabase.title}}</h1>
 
-<ul style="margin-left: 25px;">
-    <li *ngFor = "let category of myDatabase.data">
+  <ul style="margin-left: 25px;">
+    <li style="font-weight: bold;" *ngFor = "let category of myDatabase.data">
           {{category.title | uppercase}}
+          <br>
+          <div style="margin-left: 20px;">
+            <ul>
+              <li *ngFor = "let recette of category.recipes" (click)="addRecette(recette.title)">
+                <span 
+                   [ngStyle]="{'color': recette.title|quantity: form.value.recettes|color}"> {{recette.title}}
+                   {{recette.title|quantity: form.value.recettes}}x
+                </span>
+            </ul>
+          </div>
     </li>
-</ul>  
+  </ul>  
+</div>
 
-<!-- 
-    <br>
-    <pre>
-        {{myDatabase |json}}    
-    </pre> 
--->
 
+<!-- ********************************************** -->
+<!--  Check if we Have valid myDataBase myDatabase  -->
+<!-- ********************************************** -->
+<div *ngIf="myDatabase">
+
+  <h1 style="margin-left: 25px; font-weight: bold;">Resto Alternate Real Solution !</h1>
+  <h1 style="margin-left: 25px; font-weight: bold;">{{myDatabase.title}}</h1>
+
+  <ul style="margin-left: 25px;">
+    <li style="font-weight: bold;" *ngFor = "let category of myDatabase.data">
+          {{category.title | uppercase}}
+          <br>
+          <div style="margin-left: 20px;">
+            <ul>
+              <li *ngFor = "let recette of category.recipes" (click)="addRecette(recette.title)">
+                <span 
+                   [ngStyle]="{'color': recette.title|quantity: form.value.recettes|color}"> {{recette.title}}
+                   {{recette.title|quantity: form.value.recettes}}x
+                </span>
+            </ul>
+          </div>
+    </li>
+  </ul>  
+</div>
+
+
+<!-- ************************* -->
+<!--   Display The JSON Title  -->
+<!-- ************************* -->
 <div style="margin-left: 75px; font-weight: bold;">
-    Title : {{myDatabase.title})
+    Title : {{myDatabase.data.title})
     <br>
-    Title : {{data.title})
+    Title : {{data.data.title})
 </div>
