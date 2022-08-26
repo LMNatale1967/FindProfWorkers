@@ -18,8 +18,9 @@ export class FooterComponent implements OnInit {
   status:string = "NOT Available";
   //status:string = "Available";
 
-  constructor() {     
-  }
+  constructor(
+
+  ) {}
 
   ngOnInit(): void {
   }

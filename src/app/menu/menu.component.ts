@@ -40,7 +40,7 @@ export class MenuComponent implements OnInit {
     //  Recuperation des Parametres recu via l'URL
     // *********************************************
     private readonly _route : ActivatedRoute
-  ) { }
+  ) {}
 
   // *********************************************
   //  Alternate Solution to Get onyl a Parameter

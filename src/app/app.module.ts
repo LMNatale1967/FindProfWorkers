@@ -49,6 +49,7 @@ import { ProfileDetailsComponent } from './components/profiles/profile/profile-d
 import { ProfileTrainingsComponent } from './components/profiles/profile/profile-trainings/profile-trainings.component';
 import { ProfileCompetencesComponent } from './components/profiles/profile/profile-competences/profile-competences.component';
 import { ProfileDocumentsComponent } from './components/profiles/profile/profile-documents/profil-documents.component';
+import { LicenceAgreementComponent } from './components/licence-agreement/licence-agreement.component';
 
 
 // ***********************************************************
@@ -83,7 +84,7 @@ import { ProfileDocumentsComponent } from './components/profiles/profile/profile
     ProfileTrainingsComponent,
     ProfileCompetencesComponent, 
     InvalidPageComponent, 
-    ProfileDocumentsComponent,
+    ProfileDocumentsComponent, LicenceAgreementComponent,
   ],
   imports: [
     BrowserModule,
@@ -99,81 +100,133 @@ import { ProfileDocumentsComponent } from './components/profiles/profile/profile
       {
         path: '',                 // NOT defined valid Component
         redirectTo: 'login',      // Default Go to Login Page
-        pathMatch: 'full'         // Mandatory Parameter
+        pathMatch: 'full',        // Mandatory Parameter
+        resolve: {
+          // 
+        }
       },
       {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
+        resolve: {
+          // 
+        }
       },
       {
         path: 'main',
         component: MainComponent,
         canActivate: [],
-        canLoad: []
+        canLoad: [],
+        resolve: {
+          // 
+        }
       },
       {
         path: 'menu',
         component: MenuComponent,
         canActivate: [],
-        canLoad: []
+        canLoad: [],
+        resolve: {
+          // 
+        }
       },
       {
         path: 'name-editor',
         component: NameEditorComponent,
         canActivate: [],
-        canLoad: []
+        canLoad: [],
+        resolve: {
+          // 
+        }
       },
       {
         path: 'reactive-form',
         component: ProfileEditorComponent,
         canActivate: [],
-        canLoad: []
+        canLoad: [],
+        resolve: {
+          // 
+        }
       },
       {
         path: 'app-profiles-list',
         component: ProfilesListComponent,
         canActivate: [],
-        canLoad: []
+        canLoad: [],
+        resolve: {
+          // 
+        }
       },
       {
         path: 'app-profile-competences',
         component: ProfileCompetencesComponent,
         canActivate: [],
-        canLoad: []
+        canLoad: [],
+        resolve: {
+          // 
+        }
       },
       {
         path: 'app-profile-details',
         component: ProfileDetailsComponent,
         canActivate: [],
-        canLoad: []
+        canLoad: [],
+        resolve: {
+          // 
+        }
       },
       {
         path: 'app-profil-documents',
         component: ProfileDocumentsComponent,
         canActivate: [],
-        canLoad: []
+        canLoad: [],
+        resolve: {
+          // 
+        }
       },
       // {
       //   path: 'app-profile-empty',
       //   component: ProfileEmptyComponent,
       //   canActivate: [],
-      //   canLoad: []
+      //   canLoad: [],
+      // resolve: {
+        // 
+      // }
       // },
       // {
       //   path: 'app-profile-requirements',
       //   component: ProfileRequirementsComponent,
       //   canActivate: [],
-      //   canLoad: []
+      //   canLoad: [],
+      // resolve: {
+        // 
+      // }
       // },
       {
         path: 'app-profile-trainings',
         component: ProfileTrainingsComponent,
         canActivate: [],
-        canLoad: []        
+        canLoad: [],
+        resolve: {
+          // 
+        }
+      },
+      {
+        path: 'app-licence-agreement',
+        component: LicenceAgreementComponent,
+        canActivate: [],
+        canLoad: [],
+        canDeactivate: [],    // The User Need to Acept The Licence Agreement        
+        resolve: {
+          // 
+        }       
       },
       {
         path: '**',
-        component: InvalidPageComponent 
+        component: InvalidPageComponent, 
+        resolve: {
+          // 
+        }               
       },
     ])                            
   ],
@@ -184,3 +237,4 @@ import { ProfileDocumentsComponent } from './components/profiles/profile/profile
 })
 
 export class AppModule { }
+

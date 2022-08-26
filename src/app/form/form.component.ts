@@ -31,8 +31,9 @@ export class FormComponent implements OnInit {
   public userName!: string;  
   public eMail!: string;
 
-  constructor() {     
-  }
+  constructor(
+
+  ) {}
 
   ngOnInit(): void {
   }

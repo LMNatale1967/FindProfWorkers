@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
     constructor(
       private readonly _router : Router
-    ) { } 
+    ) {} 
 
     ngOnInit(): void {
   }
