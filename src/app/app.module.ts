@@ -25,14 +25,43 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { QuantityPipe } from './pipes/quantity/quantity.pipe';
-import { ProfilesListComponent } from './components/profiles-list/profiles-list.component';
 import { HttpClientModule } from '@angular/common/http';
 
 // ***************************
 //  Impport The Router Module
 // ***************************
-import { RouterModule } from '@angular/router';
+import { Route, RouterModule, Routes } from '@angular/router';
+
+// ***********************************
+//  Import The Invalid Page Component
+// ***********************************
 import { InvalidPageComponent } from './invalid-page/invalid-page/invalid-page.component';
+
+// *******************
+//  Main PorfilesList 
+// *******************
+import { ProfilesListComponent } from './components/profiles-list/profiles-list.component';
+
+// ***************************************
+//  Import the Porfile Details Components
+// ***************************************
+import { ProfileDetailsComponent } from './components/profiles/profile/profile-details/profile-details.component';
+import { ProfileTrainingsComponent } from './components/profiles/profile/profile-trainings/profile-trainings.component';
+import { ProfileCompetencesComponent } from './components/profiles/profile/profile-competences/profile-competences.component';
+import { ProfileDocumentsComponent } from './components/profiles/profile/profile-documents/profil-documents.component';
+
+
+// ****************************************
+//  Alternate Solution to Implement Routes 
+// ****************************************
+// const routes: Routes = [
+//   {path: 'component-one',  component: Name_Of_The_Component},
+//   {path: 'component-two',  component: Name_Of_The_Component},
+//   {path: 'component-tree', component: Name_Of_The_Component},
+//   {path: 'component-four', component: Name_Of_The_Component},
+//   {path: 'component-five', component: Name_Of_The_Component},
+// ];
+
 
 @NgModule({
   declarations: [
@@ -48,7 +77,12 @@ import { InvalidPageComponent } from './invalid-page/invalid-page/invalid-page.c
     NameEditorComponent,          //  Added By Angualar        
     LoginComponent,               //  Added By Angualar        
     QuantityPipe, 
-    ProfilesListComponent, InvalidPageComponent,        //  Added By Angualar        
+    ProfileDetailsComponent, 
+    ProfilesListComponent, 
+    ProfileTrainingsComponent,
+    ProfileCompetencesComponent, 
+    InvalidPageComponent, 
+    ProfileDocumentsComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,11 +90,15 @@ import { InvalidPageComponent } from './invalid-page/invalid-page/invalid-page.c
     FormsModule,                  // Template-Driven Forms
     ReactiveFormsModule,          // Reactive Forms
     HttpClientModule,             // HttpClientModule
+
+    // *******************************
+    //  Implement the Routing Process
+    // *******************************
     RouterModule.forRoot([        // RouterModule
       {
-        path: '',
-        redirectTo: 'login',
-        pathMatch: 'full'
+        path: '',                 // NOT defined valid Component
+        redirectTo: 'login',      // Default Go to Login Page
+        pathMatch: 'full'         // Mandatory Parameter
       },
       {
         path: 'login',
@@ -68,24 +106,64 @@ import { InvalidPageComponent } from './invalid-page/invalid-page/invalid-page.c
       },
       {
         path: 'main',
-        component: MainComponent
+        component: MainComponent,
+        canActivate: []
+
       },
       {
         path: 'menu',
-        component: MenuComponent
+        component: MenuComponent,
+        canActivate: []
       },
       {
         path: 'name-editor',
-        component: NameEditorComponent
+        component: NameEditorComponent,
+        canActivate: []
       },
       {
         path: 'reactive-form',
-        component: ProfileEditorComponent
+        component: ProfileEditorComponent,
+        canActivate: []
+      },
+      {
+        path: 'app-profiles-list',
+        component: ProfilesListComponent,
+        canActivate: []
+      },
+      {
+        path: 'app-profile-competences',
+        component: ProfileCompetencesComponent,
+        canActivate: []
+      },
+      {
+        path: 'app-profile-details',
+        component: ProfileDetailsComponent,
+        canActivate: []
+      },
+      {
+        path: 'app-profil-documents',
+        component: ProfileDocumentsComponent,
+        canActivate: []
+      },
+      // {
+      //   path: 'app-profile-empty',
+      //   component: ProfileEmptyComponent,
+      //   canActivate: []
+      // },
+      // {
+      //   path: 'app-profile-requirements',
+      //   component: ProfileRequirementsComponent,
+      //   canActivate: []
+      // },
+      {
+        path: 'app-profile-trainings',
+        component: ProfileTrainingsComponent,
+        canActivate: []
       },
       {
         path: '**',
         component: InvalidPageComponent 
-      }
+      },
     ])                            
   ],
 

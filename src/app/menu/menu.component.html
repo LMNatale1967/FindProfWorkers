@@ -1,7 +1,67 @@
-<h1 style="margin-left: 25px;">Menu Works !</h1>
+<h1 style="margin-left: 25px;">Main Profile(s) Application Works !</h1>
 
-<ul style="margin-left: 25px;">
+<!-- 
+ <ul style="margin-left: 25px;">
     <li *ngFor = "let menu of menuItems">
         {{menu.name | uppercase}}
+    </li>
+ </ul> 
+-->
+
+
+<ul style="margin-left: 25px;" class="square">
+
+    <li *ngFor = "let menu of menuOptions">
+
+        <div>
+            <div>
+                <div *ngIf = "menu.optionID == '1'" (click)="displayFULL_PORFILE_LIST()" > 
+                    {{menu.optionID}} - {{menu.option | uppercase}}
+                </div>
+
+                <div *ngIf = "menu.optionID == '2'" (click)="displayPROFILE_SHORT_VERSION()"> 
+                    {{menu.optionID}} - {{menu.option | uppercase}}
+                </div>
+
+                <div *ngIf = "menu.optionID == '3'" (click)="displayPROFILE_LONG_VERSION()"> 
+                    {{menu.optionID}} - {{menu.option | uppercase}}
+                </div>
+
+                <div *ngIf = "menu.optionID == '4'" (click)="displayPROFILE_Competences()"> 
+                    {{menu.optionID}} - {{menu.option | uppercase}}
+                </div>
+
+                <div *ngIf = "menu.optionID == '5'" (click)="displayPROFILE_DOCUMENTS()"> 
+                    {{menu.optionID}} - {{menu.option | uppercase}}
+                </div>
+
+                <div *ngIf = "menu.optionID == '6'" (click)="displayPROFILE_TRAININGS()"> 
+                    {{menu.optionID}} - {{menu.option | uppercase}}
+                </div>
+
+                <div *ngIf = "menu.optionID == '7'" (click)="displayPROFILE_REQUIREMENTS()"> 
+                    {{menu.optionID}} - {{menu.option | uppercase}}
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ********************* -->
+        <!--     NOT Working       -->
+        <!-- ********************* -->
+
+        <!-- 
+         <div [ngSwitch]="menu.optionID">        
+           <div *ngSwitchCase = "'1'" (click)="displayFULL_PORFILE_LIST()"></div>
+           <div *ngSwitchCase = "'2'" (click)="displayPROFILE_SHORT_VERSION()"></div>
+           <div *ngSwitchCase = "'3'" (click)="displayPROFILE_LONG_VERSION()"></div>
+           <div *ngSwitchCase = "'4'" (click)="displayPROFILE_Competences()"></div>
+           <div *ngSwitchCase = "'5'" (click)="displayPROFILE_DOCUMENTS()"></div>
+           <div *ngSwitchCase = "'6'" (click)="displayPROFILE_TRAININGS()"></div>
+           <div *ngSwitchCase = "'7'" (click)="displayPROFILE_REQUIREMENTS()"></div>
+           <div *ngSwitchDefault></div>          
+         </div>              
+        -->
+
     </li>
 </ul>

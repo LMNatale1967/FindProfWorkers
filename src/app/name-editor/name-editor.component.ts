@@ -48,6 +48,10 @@ export class NameEditorComponent implements OnInit {
         name : new FormControl(''),
         quantity : new FormControl('')
     }));
+
+    // ******************
+    //  Log pour Checker
+    // ******************
     console.log(this.form.value);
   }
 
@@ -59,6 +63,10 @@ export class NameEditorComponent implements OnInit {
   // *************************************************************
   removeGroup() {
     (this.form.get('items') as FormArray).removeAt(0)
+
+    // ******************
+    //  Log pour Checker
+    // ******************
     console.log(this.form.value);
   }
 }

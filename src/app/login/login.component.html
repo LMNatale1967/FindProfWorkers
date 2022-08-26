@@ -4,14 +4,43 @@
     <br>
     
     <form [formGroup]="signinForm" (ngSubmit)="login()">
-        <label style="margin-left: 25px; font-weight: bold;" for="name">Name or E-Mail address : </label>
-        <input style="margin-left: 25px; font-weight: bold;" id="name" type="text" size="45" [formControl]="userName">
+        <label style="margin-left: 25px; font-weight: bold;" for="name">Name or E-Mail address : <span style="color: red;">*</span></label>
+        <input style="margin-left: 25px; font-weight: bold;" id="eMail" type="text" size="45" [formControl]="userName">
         
         <br><br>
-        <label style="margin-left: 25px; font-weight: bold;" for="name">Password : </label>
-        <input style="margin-left: 25px; font-weight: bold;" id="name" type="Password" [formControl]="userPassword">
+        <label style="margin-left: 130px; font-weight: bold;" for="name">Password : <span style="color: red;">*</span></label>
+        <input style="margin-left: 20px; font-weight: bold;" id="passwordN" type="Password" [formControl]="userPassword">
 
         <p>
-         <button style="margin-left: 150px; font-weight: bold;" type="submit" class="btn btn primary">Subit</button>
+         <button class="social-login" style="margin-left: 450px; font-weight: bold;" type="submit" class="btn btn primary">Log In</button>
         </p>
+
+        <p style="margin-left: 250px; font-weight: bold;">
+            <a routerLink="/menu">For EVALUATION you can Work with Find Profile Workers in <span style="color: red;">Anonymous / Guest</span> (FindProfWorkers)</a>
+            <p style="margin-left: 175px;">
+                <textarea wrap="hard" style="align-content:right; border:0px outset #000000;" readonly id="txtAnonymousSign" name="AnonymousSign" rows="25" cols="250">
+                  Dear User, for your information "The previous link" access don't give you the FULL fonctionalities of The Application
+                  
+                  ****************************************************
+                   INFORMATIONS SUR LA Version ABONNEMENT
+                   ***************************************************
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ante accumsan, interdum est ac, aliquet lacus. 
+                  Mauris in nunc libero. Pellentesque suscipit libero et libero euismod, et iaculis lorem vestibulum. 
+                  In sagittis fringilla imperdiet. Proin eleifend elementum pellentesque. 
+                  In ultricies lorem lacus, et accumsan nulla rhoncus nec. Vivamus non sodales risus. 
+                  Pellentesque rhoncus dictum lectus, vel faucibus dolor gravida finibus. 
+                  Nam aliquam, arcu at mattis ullamcorper, leo lacus pulvinar lorem, ut dignissim ante dui pulvinar nisl. 
+                  Cras at fringilla felis. Sed vulputate justo dolor, et cursus sapien posuere id.   
+                  
+                  Nunc non ante eget sem aliquet finibus. Etiam accumsan, ex a dictum aliquam, metus massa luctus mi, quis feugiat tellus felis non ex. 
+                  Etiam gravida sagittis sem sed commodo. In eros eros, ultrices sit amet nulla in, lacinia congue purus. 
+                  Mauris euismod cursus molestie. Nunc et lectus vehicula, malesuada nisl quis, elementum nulla. 
+                  Fusce dignissim, nisl euismod vehicula cursus, dolor justo aliquet purus, pharetra lobortis mi augue condimentum eros. 
+                  Donec enim nisi, scelerisque in diam quis, pretium gravida purus. Quisque mollis scelerisque metus, ut bibendum dolor. 
+                  Pellentesque dapibus pellentesque consectetur. Aliquam volutpat libero a arcu porttitor, non viverra justo fringilla. 
+                  Duis vitae lorem faucibus, pulvinar sapien at, pulvinar nibh. Ut eu sem malesuada, malesuada est ut, rutrum elit. 
+                  Sed pretium viverra tincidunt. Vivamus euismod quam neque, quis blandit nulla egestas at. 
+                  Morbi finibus nibh congue dolor laoreet, vitae cursus sapien luctus.
+                </textarea>
+            </p>
     </form>

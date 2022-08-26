@@ -42,6 +42,10 @@ export class FormControlComponent {
 
   register() {
     alert("You click Sign Up Button !!")
+
+    // ******************
+    //  Log pour Checker
+    // ******************
     console.log(this.name);
     console.log(this.userName);
     console.log(this.userEMail);

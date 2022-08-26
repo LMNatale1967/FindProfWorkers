@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileEmptyComponent implements OnInit {
 
   constructor(    
+    
   ) { }
 
   ngOnInit(): void {

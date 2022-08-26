@@ -23,8 +23,10 @@ export class ProfileEditorComponent {
 
 
  updateProfile() {
-   // Nothing To do
-  console.log("Nothing To do For the Moment");
+    // ******************
+    //  Log pour Checker
+    // ******************
+    console.log("Nothing To do For the Moment");
 
     this.profileForm.patchValue({
 

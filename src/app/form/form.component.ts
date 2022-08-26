@@ -39,6 +39,10 @@ export class FormComponent implements OnInit {
 
   register() {
     alert("You click Sign Up Button !!")
+
+    // ******************
+    //  Log pour Checker
+    // ******************
     console.log(this.userName);
     console.log(this.eMail);
   }

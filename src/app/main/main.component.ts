@@ -40,6 +40,10 @@ export class MainComponent implements OnInit {
 
   displayDescription(pDescription:string, pValue:number, pEvent:any) {
     alert(pDescription + " " + "\n Current Value : " + pValue);
+    
+    // ******************
+    //  Log pour Checker
+    // ******************
     console.log(pEvent);    
   }
 

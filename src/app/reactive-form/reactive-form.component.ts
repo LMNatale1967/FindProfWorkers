@@ -38,6 +38,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   
   //   register() {
   //     alert("You click Sign Up Button !!")
+      // ******************
+      //  Log pour Checker
+      // ******************
   //     console.log(this.userName);
   //     console.log(this.userEMail);
   //   }
@@ -63,6 +66,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
   //   // register() {
   //   //   alert("You click Sign Up Button !!")
+
+       // ******************
+        //  Log pour Checker
+        // ******************
   //   //   console.log(this.signinForm.value);
   //   // }
 // }
