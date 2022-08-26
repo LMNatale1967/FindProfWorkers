@@ -6,19 +6,21 @@
     <form [formGroup]="signinForm" (ngSubmit)="login()">
         <label style="margin-left: 25px; font-weight: bold;" for="name">Name or E-Mail address : <span style="color: red;">*</span></label>
         <input style="margin-left: 25px; font-weight: bold;" id="eMail" type="text" size="45" [formControl]="userName">
-        
+        <label (click)="displayEasterEggs('./assets/data/images/easter-eggs/220px-Amerigo_Vespucci.jpg', 1000, 1000, 'Amerigo Vespucci')"  style="margin-left: 25px;" for="name">Like : Polo Marco or PoloMarco@amerigovespucci.us</label>
+
         <br><br>
         <label style="margin-left: 130px; font-weight: bold;" for="name">Password : <span style="color: red;">*</span></label>
-        <input style="margin-left: 20px; font-weight: bold;" id="passwordN" type="Password" [formControl]="userPassword">
+        <input style="margin-left: 20px; font-weight: bold;" id="password" type="Password" [formControl]="userPassword">
+        <label style="margin-left: 25px;" for="name">Like : R@B1MS31BGcC</label>
 
         <p>
-         <button class="social-login" style="margin-left: 450px; font-weight: bold;" type="submit" class="btn btn primary">Log In</button>
+         <button class="social-login" style="margin-left: 450px; font-weight: bold;" type="submit">Log In</button>
         </p>
 
         <p style="margin-left: 250px; font-weight: bold;">
             <a routerLink="/menu">For EVALUATION you can Work with Find Profile Workers in <span style="color: red;">Anonymous / Guest</span> (FindProfWorkers)</a>
             <p style="margin-left: 175px;">
-                <textarea wrap="hard" style="align-content:right; border:0px outset #000000;" readonly id="txtAnonymousSign" name="AnonymousSign" rows="25" cols="250">
+                <textarea wrap="hard" style="align-content:right; border:0px outset #000000;" readonly id="txtAnonymousSign" name="AnonymousSign" rows="22" cols="250">
                   Dear User, for your information "The previous link" access don't give you the FULL fonctionalities of The Application
                   
                   ****************************************************
@@ -42,5 +44,7 @@
                   Sed pretium viverra tincidunt. Vivamus euismod quam neque, quis blandit nulla egestas at. 
                   Morbi finibus nibh congue dolor laoreet, vitae cursus sapien luctus.
                 </textarea>
+
+                <button onclick="printVersionInformation()" class="social-login" style="margin-left: 800px; font-weight: bold;" type="button">Print</button>                
             </p>
     </form>

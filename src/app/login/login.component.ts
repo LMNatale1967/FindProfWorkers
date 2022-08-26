@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
 
   userName = new FormControl('');  
   userPassword = new FormControl('');
+  printVersionInformation = new FormControl('');
 
 
     constructor(
@@ -94,12 +95,36 @@ export class LoginComponent implements OnInit {
       return userAuthenticate;
     };   
 
-    
+
     // ******************************************
     //  This Function Check The Role of The User
     // ******************************************
     function checkTheUserRole(): string {
       return 'Master'
     }
+
+
+    // *******************************
+    //  Print The Version Information
+    // *******************************
+    function printVersionInformation() {
+      // Nothing To Do for The Moment
+    }  
   }
+
+  // ************************
+  //  Display an Easter Eggs
+  //  NOT Working !
+  // ************************
+  displayEasterEggs(pSrc:string, pWidth:number, pHeight:number, pAlt:string): void {
+
+    var img = document.createElement("img");
+    img.src = pSrc;
+    img.width = pWidth;
+    img.height = pHeight;
+    img.alt = pAlt;
+
+    // This next line will just add it to the <body> tag
+    document.body.appendChild(img);
+  } 
 }

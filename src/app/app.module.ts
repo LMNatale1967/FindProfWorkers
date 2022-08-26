@@ -51,9 +51,10 @@ import { ProfileCompetencesComponent } from './components/profiles/profile/profi
 import { ProfileDocumentsComponent } from './components/profiles/profile/profile-documents/profil-documents.component';
 
 
-// ****************************************
-//  Alternate Solution to Implement Routes 
-// ****************************************
+// ***********************************************************
+//  Alternate Solution to Implement Routes via a Routes Array 
+//  Alternate Solution Use the File : app-routing.module.ts
+// ***********************************************************
 // const routes: Routes = [
 //   {path: 'component-one',  component: Name_Of_The_Component},
 //   {path: 'component-two',  component: Name_Of_The_Component},
@@ -107,58 +108,68 @@ import { ProfileDocumentsComponent } from './components/profiles/profile/profile
       {
         path: 'main',
         component: MainComponent,
-        canActivate: []
-
+        canActivate: [],
+        canLoad: []
       },
       {
         path: 'menu',
         component: MenuComponent,
-        canActivate: []
+        canActivate: [],
+        canLoad: []
       },
       {
         path: 'name-editor',
         component: NameEditorComponent,
-        canActivate: []
+        canActivate: [],
+        canLoad: []
       },
       {
         path: 'reactive-form',
         component: ProfileEditorComponent,
-        canActivate: []
+        canActivate: [],
+        canLoad: []
       },
       {
         path: 'app-profiles-list',
         component: ProfilesListComponent,
-        canActivate: []
+        canActivate: [],
+        canLoad: []
       },
       {
         path: 'app-profile-competences',
         component: ProfileCompetencesComponent,
-        canActivate: []
+        canActivate: [],
+        canLoad: []
       },
       {
         path: 'app-profile-details',
         component: ProfileDetailsComponent,
-        canActivate: []
+        canActivate: [],
+        canLoad: []
       },
       {
         path: 'app-profil-documents',
         component: ProfileDocumentsComponent,
-        canActivate: []
+        canActivate: [],
+        canLoad: []
       },
       // {
       //   path: 'app-profile-empty',
       //   component: ProfileEmptyComponent,
-      //   canActivate: []
+      //   canActivate: [],
+      //   canLoad: []
       // },
       // {
       //   path: 'app-profile-requirements',
       //   component: ProfileRequirementsComponent,
-      //   canActivate: []
+      //   canActivate: [],
+      //   canLoad: []
       // },
       {
         path: 'app-profile-trainings',
         component: ProfileTrainingsComponent,
-        canActivate: []
+        canActivate: [],
+        canLoad: []        
       },
       {
         path: '**',
