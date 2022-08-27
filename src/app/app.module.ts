@@ -103,14 +103,14 @@ import { RecettesResolver } from './resolvers/recettes.resolver.resolver';
         redirectTo: 'login',      // Default Go to Login Page
         pathMatch: 'full',        // Mandatory Parameter
         resolve: {
-          // 
+          // Nothing To Do
         }
       },
       {
         path: 'login',
         component: LoginComponent,
         resolve: {
-          // 
+          // Nothing To Do
         }
       },
       {
@@ -119,7 +119,7 @@ import { RecettesResolver } from './resolvers/recettes.resolver.resolver';
         canActivate: [],
         canLoad: [],
         resolve: {
-          // 
+          // Nothing To Do
         }
       },
       {
@@ -128,7 +128,7 @@ import { RecettesResolver } from './resolvers/recettes.resolver.resolver';
         canActivate: [],
         canLoad: [],
         resolve: {
-          // 
+          // Nothing To Do
         }
       },
       {
@@ -137,7 +137,7 @@ import { RecettesResolver } from './resolvers/recettes.resolver.resolver';
         canActivate: [],
         canLoad: [],
         resolve: {
-          // 
+          // Nothing To Do
         }
       },
       {
@@ -146,7 +146,7 @@ import { RecettesResolver } from './resolvers/recettes.resolver.resolver';
         canActivate: [],
         canLoad: [],
         resolve: {
-          // 
+          // Nothing To Do
         }
       },
       {
@@ -155,7 +155,7 @@ import { RecettesResolver } from './resolvers/recettes.resolver.resolver';
         canActivate: [],
         canLoad: [],
         resolve: {
-          // 
+          // Nothing To Do
         }
       },
       {
@@ -164,7 +164,7 @@ import { RecettesResolver } from './resolvers/recettes.resolver.resolver';
         canActivate: [],
         canLoad: [],
         resolve: {
-          // 
+          // Nothing To Do
         }
       },
       {
@@ -173,7 +173,7 @@ import { RecettesResolver } from './resolvers/recettes.resolver.resolver';
         canActivate: [],
         canLoad: [],
         resolve: {
-          // 
+          // Nothing To Do
         }
       },
       {
@@ -182,7 +182,7 @@ import { RecettesResolver } from './resolvers/recettes.resolver.resolver';
         canActivate: [],
         canLoad: [],
         resolve: {
-          // 
+          // Nothing To Do
         }
       },
       // {
@@ -190,18 +190,15 @@ import { RecettesResolver } from './resolvers/recettes.resolver.resolver';
       //   component: ProfileEmptyComponent,
       //   canActivate: [],
       //   canLoad: [],
-      // resolve: {
-        // 
-      // }
+      //    resolve: {}
+      // },
       // },
       // {
       //   path: 'app-profile-requirements',
       //   component: ProfileRequirementsComponent,
       //   canActivate: [],
       //   canLoad: [],
-      // resolve: {
-        // 
-      // }
+      //   resolve: {}
       // },
       {
         path: 'app-profile-trainings',
@@ -209,7 +206,7 @@ import { RecettesResolver } from './resolvers/recettes.resolver.resolver';
         canActivate: [],
         canLoad: [],
         resolve: {
-          // 
+          // Nothing To Do
         }
       },
       {
@@ -219,14 +216,14 @@ import { RecettesResolver } from './resolvers/recettes.resolver.resolver';
         canLoad: [],
         canDeactivate: [],    // The User Need to Acept The Licence Agreement        
         resolve: {
-          // 
+          // Nothing To Do
         }       
       },
       {
         path: '**',
         component: InvalidPageComponent, 
         resolve: {
-          // 
+          // Nothing To Do
         }               
       },
       // ********************************

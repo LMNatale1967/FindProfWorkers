@@ -134,9 +134,9 @@ export class MainComponent implements OnInit {
     console.log(this.form.value);    
   }
 
-  // *****************************************
-  //  Call The Service Disply Welcome Message
-  // *****************************************
+  // ******************************************
+  //  Call The Service Display Welcome Message
+  // ******************************************
   displayWelcome() {
   }
 }
