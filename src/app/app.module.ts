@@ -50,6 +50,7 @@ import { ProfileTrainingsComponent } from './components/profiles/profile/profile
 import { ProfileCompetencesComponent } from './components/profiles/profile/profile-competences/profile-competences.component';
 import { ProfileDocumentsComponent } from './components/profiles/profile/profile-documents/profil-documents.component';
 import { LicenceAgreementComponent } from './components/licence-agreement/licence-agreement.component';
+import { RecettesResolver } from './resolvers/recettes.resolver.resolver';
 
 
 // ***********************************************************
@@ -228,6 +229,17 @@ import { LicenceAgreementComponent } from './components/licence-agreement/licenc
           // 
         }               
       },
+      // ********************************
+      // Implement The Resolver in resto
+      // Sample Code
+      // ********************************
+      // {
+      //   path: 'resto',
+      //   component: RestoComponent,
+      //   resolve: {
+      //     recettes: RecettesResolver
+      //   }       
+      // },
     ])                            
   ],
 
