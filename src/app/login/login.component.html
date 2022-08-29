@@ -1,31 +1,75 @@
 
-<h1 style="margin-left: 100px;">Login works !</h1>
+<h1 style="margin-left: 200px;" (click)="updateProfile()">Login Screen works !</h1>
 
     <br>
     
     <form [formGroup]="signinForm" (ngSubmit)="login()">
-        <label style="margin-left: 25px; font-weight: bold;" for="name">Name or E-Mail address : <span style="color: red;">*</span></label>
-        <input style="margin-left: 25px; font-weight: bold;" id="eMail" type="text" size="45" [formControl]="userName">
+        <label (click)="setUserName()" style="margin-left: 25px; font-weight: bold;" for="lblUsername">Name or E-Mail address : <span style="color: red;">*</span></label>
+        <input style="margin-left: 25px; font-weight: bold;" id="userName" type="text" size="45" formControlName="userName">        
         <label (click)="displayEasterEggs('./assets/data/images/easter-eggs/220px-Amerigo_Vespucci.jpg', 1000, 1000, 'Amerigo Vespucci')"  style="margin-left: 25px;" for="name">Like : Polo Marco or PoloMarco@amerigovespucci.us</label>
 
+        <!-- Display Errors for userName -->
+        <!-- <div [hidden]="signinForm.get('userName').valid || signinForm.get('userName').untouched">
+
+            <div *ngIf="userName.errors?.['required']">
+                Field Name is requiered 
+                Please, enter a valid Full Name or a valid E-Mail address 
+             </div>
+     
+             <div *ngIf="userName.errors?.['minlength']">
+                 Please, Name must be at least 9 characters long.
+             </div>
+     
+             <div *ngIf="userName.errors?.['maxLength']">
+                 Please, Name must be @ maximum 25 characters long.
+             </div>
+     
+             <div *ngIf="userName.errors?.['email']">
+                 Please, enter a valid Full Name or a valid E-Mail address 
+             </div>
+        </div> -->
+
+
         <br><br>
-        <label style="margin-left: 130px; font-weight: bold;" for="name">Password : <span style="color: red;">*</span></label>
-        <input style="margin-left: 20px; font-weight: bold;" id="password" type="Password" [formControl]="userPassword">
+        <label (click)="setUserPassword()" style="margin-left: 130px; font-weight: bold;" for="lblUserPasswordname">Password : <span style="color: red;">*</span></label>
+        <input style="margin-left: 20px; font-weight: bold;" id="userPassword" type="Password" value="R@B1MS31BGcC" formControlName="userPassword">
         <label style="margin-left: 25px;" for="name">Like : R@B1MS31BGcC</label>
 
+        <!-- Display Errors for userPassword -->
+        <!-- <div [hidden]="signinForm.get('userPassword').valid || signinForm.get('userPassword').untouched">
+
+            <div *ngIf="userPassword.errors?.['required']">
+                Field Password is requiered 
+                Please, enter a valid Password 
+             </div>
+     
+             <div *ngIf="userPassword.errors?.['minlength']">
+                 Please, Name must be at least 12 characters long.
+             </div>
+     
+             <div *ngIf="userPassword.errors?.['maxLength']">
+                 Please, Name must be @ maximum 15 characters long.
+             </div>
+        </div> -->
+
         <p>
-         <button class="social-login" style="margin-left: 450px; font-weight: bold;" type="submit">Log In</button>
+         <button (click) = "validateLogin()" class="social-login" style="margin-left: 450px; font-weight: bold;" type="button">Log In</button>
         </p>
 
-        <p style="margin-left: 250px; font-weight: bold;">
-            <a routerLink="/menu">For EVALUATION you can Work with Find Profile Workers in <span style="color: red;">Anonymous / Guest</span> (FindProfWorkers)</a>
-            <p style="margin-left: 175px;">
-                <textarea wrap="hard" style="align-content:right; border:0px outset #000000;" readonly id="txtAnonymousSign" name="AnonymousSign" rows="22" cols="250">
-                  Dear User, for your information "The previous link" access don't give you the FULL fonctionalities of The Application
-                  
+        <p style="margin-left: 250px; font-weight: bold;">            
+            <label>
+                IMPORTANT : For EVALUATION you can use the 'Find Profile Workers' application.
+                <br>
+                Use <span style="color: red;">Anonymous</span> or <span style="color: red;">Guest</span> in Name or E-Mail address & <span style="color: red;">FindProfWorkers</span> in Password.
+            </label>
+
+            <p style="margin-left: 250px;">
+              <span style="color: black;">Dear User, for your information. In Anonymous or Guest user access, you can't have the FULL fonctionalities of the Application</span>
+
+                  <textarea wrap="hard" style="align-content:right; border:0px outset #000000;" readonly id="txtAnonymousSign" name="AnonymousSign" rows="20" cols="250">                  
                   ****************************************************
-                   INFORMATIONS SUR LA Version ABONNEMENT
-                   ***************************************************
+                     INFORMATIONS SUR LA Version ABONNEMENT
+                  ****************************************************
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed ante accumsan, interdum est ac, aliquet lacus. 
                   Mauris in nunc libero. Pellentesque suscipit libero et libero euismod, et iaculis lorem vestibulum. 
                   In sagittis fringilla imperdiet. Proin eleifend elementum pellentesque. 
@@ -42,9 +86,7 @@
                   Pellentesque dapibus pellentesque consectetur. Aliquam volutpat libero a arcu porttitor, non viverra justo fringilla. 
                   Duis vitae lorem faucibus, pulvinar sapien at, pulvinar nibh. Ut eu sem malesuada, malesuada est ut, rutrum elit. 
                   Sed pretium viverra tincidunt. Vivamus euismod quam neque, quis blandit nulla egestas at. 
-                  Morbi finibus nibh congue dolor laoreet, vitae cursus sapien luctus.
                 </textarea>
-
-                <button onclick="printVersionInformation()" class="social-login" style="margin-left: 800px; font-weight: bold;" type="button">Print</button>                
+                <button (click)="printVersionInformation()" class="social-login" style="margin-left: 800px; font-weight: bold;" type="button">Print</button>                
             </p>
     </form>

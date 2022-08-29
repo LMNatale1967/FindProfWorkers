@@ -13,7 +13,7 @@
           <br>
           <div style="margin-left: 20px;">
             <ul>
-              <li *ngFor = "let recette of category.recipes" (click)="addRecette(recette.title)">
+              <li *ngFor = "let recette of category.recipes" (click)="addRecette(recette.title, recette.price)">
                 <span 
                    [ngStyle]="{'color': recette.title|quantity: form.value.recettes|color}"> {{recette.title}}
                    {{recette.title|quantity: form.value.recettes}}x
@@ -39,7 +39,8 @@
           <br>
           <div style="margin-left: 20px;">
             <ul>
-              <li *ngFor = "let recette of category.recipes" (click)="addRecette(recette.title)">
+              <li *ngFor = "let recette of category.recipes" 
+              (click)="addRecette(recette.title, recette.price)">
                 <span 
                    [ngStyle]="{'color': recette.title|quantity: form.value.recettes|color}"> {{recette.title}}
                    {{recette.title|quantity: form.value.recettes}}x

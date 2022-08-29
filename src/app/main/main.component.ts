@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { DisplayWelcomeService } from '../services/display-welcome/display-welcome.service';
 import { RecettesService } from '../services/recettes/reccetes.service';
@@ -18,6 +18,8 @@ export class MainComponent implements OnInit {
   //  Allow @ HTML to use data
   //  We Inform HTMl we Have Exported some Var Ready to Use 
   // *******************************************************
+  @Input() recettesItems!: any;
+  
   myDatabase!: any; 
   myDisplayWelcome = this._displayWelcome.displayWelcome();
   
@@ -48,7 +50,7 @@ export class MainComponent implements OnInit {
   }
 
   // *******************************************************
-  // Recomendation use private and _in The Name of the VAR
+  //  Recomendation use private and _in The Name of the VAR
   // *******************************************************
   constructor(
     private readonly _service: RecettesService,
@@ -79,7 +81,7 @@ export class MainComponent implements OnInit {
     console.log(this.form.value.recettes.map((elem: any) => elem.quantity));
   }
 
-  addRecette(name: string) {
+  addRecette(name: string, price: number) {
     const liste = this.form.get('recettes') as FormArray;
     const index = liste.value.findIndex(
       (el: any) => el.name === name
@@ -90,7 +92,9 @@ export class MainComponent implements OnInit {
     // ******************
     console.log(liste.value);
 
-    // Si la recette existe deja dans la liste...    
+    // ********************************************
+    //  Si la Recette Existe deja dans la Liste...    
+    // ********************************************
     if (index >= 0) {
       const recetteAIncremenet = liste.at(index);
       const quantity = recetteAIncremenet.value.quantity;
@@ -99,13 +103,19 @@ export class MainComponent implements OnInit {
       });
 
     } else {
-      // Si la recette n'existe pas dans la list...
+      // ***********************************************
+      //  Si la Recette N'existe pas dans la List...
+      // ***********************************************
       const group = new FormGroup({
         name: new FormControl(name, Validators.required),
         quantity: new FormControl(1, Validators.compose([
           Validators.required,
           Validators.min(1),
         ])),
+        price : new FormControl(0, Validators.compose([
+          Validators.required,
+          Validators.min(1),
+        ]))
       });
 
       // *****************************************
